@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "nodejs.fullname" . }}
   labels:
-    {{- include "nodejs.labels" . | nindent 4 }}
+    app: node-app
+  name: {{ .Values.service.name }}
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+  - port: {{ .Values.service.port }}
+    protocol: TCP
+    targetPort: {{ .Values.service.port }}
   selector:
-    {{- include "nodejs.selectorLabels" . | nindent 4 }}
+    app: node-app
+  type: {{ .Values.service.type }}
