@@ -17,4 +17,4 @@ service:
 ingress:
   enabled: true
   className: "nginx"
-  hosts: node-app.192.168.1.192.nip.io
+  hosts: node-app.192.168.1.194.nip.io
