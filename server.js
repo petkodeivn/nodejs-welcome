@@ -16,7 +16,7 @@ app.get('/healthz', function (req, res) {
   if(healthy)
    res.send('OK');
   else
-   res.status(404).send('NOT OK!');
+   res.status(404).send('NOT OK');
 });
 
 app.get('/cancer', function (req, res) {
